@@ -1,0 +1,351 @@
+def run_program():
+
+   
+
+    def run_ai():
+
+        import sys
+
+        import pyttsx3;
+
+        import os
+
+        import openai
+
+        import datetime
+
+        import time
+
+        import colorama
+
+        import deep_translator
+
+        from colorama import Fore
+
+        from deep_translator import (GoogleTranslator,
+
+                             ChatGptTranslator,
+
+                             MicrosoftTranslator,
+
+                             PonsTranslator,
+
+                             LingueeTranslator,
+
+                             MyMemoryTranslator,
+
+                             YandexTranslator,
+
+                             PapagoTranslator,
+
+                             DeeplTranslator,
+
+                             QcriTranslator,
+
+                             single_detection,
+
+                             batch_detection)
+
+ 
+
+        openai.api_key = "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"
+
+        current_time = datetime.datetime.now().strftime("%H %M")
+
+ 
+
+        while True:
+
+            import wikipedia
+
+            question = r.recognize_google(audio)
+
+          #  if "echo" not in question.lower():
+
+           #     print(Fore.RED,"Request Denied")
+
+            #    run_program()
+
+            if "what time" in question.lower():
+
+                engine = pyttsx3.init()
+
+                rate = engine.getProperty('rate')
+
+                engine.setProperty('rate', rate == 150) # Decrease the rate by 50
+
+                engine.say("The time is" + current_time + ", Sir")
+
+                engine.runAndWait()        
+
+                run_program();      
+
+            if question.lower() == "exit the program":
+
+                engine = pyttsx3.init()
+
+                rate = engine.getProperty('rate')
+
+                engine.setProperty('rate', rate == 150) # Decrease the rate by 50
+
+                engine.say("Goodbye!")
+
+                engine.runAndWait()
+
+                print("\033[31mGoodbye!\033[0m")
+
+                sys.exit()
+
+            #elif 'time' in question.lower():
+
+             #   engine = pyttsx3.init()
+
+              #  rate = engine.getProperty('rate')
+
+               # engine.setProperty('rate', rate == 150) # Decrease the rate by 50
+
+                #engine.say("The current time is", current_time)
+
+                #engine.runAndWait()
+
+            if question.lower() == "make a wikipedia search":
+
+                engine = pyttsx3.init()
+
+                rate = engine.getProperty('rate')
+
+                engine.setProperty('rate', rate == 150) # Decrease the rate by 50
+
+                engine.say("Okay, what would you like me to search for?")
+
+                engine.runAndWait()
+
+                print("\033[31mOkay, what would you like me to search for?\033[0m")
+
+                r2 = sr.Recognizer()
+
+                with sr.Microphone() as source2:
+
+                    audio2 = r2.listen(source2)
+
+                    page = r2.recognize_google(audio2)
+
+ 
+
+                print(Fore.WHITE,"Please wait while we search Wikipedia...")
+
+                page_title = page
+
+ 
+
+# Get the Wikipedia page object
+
+                page = wikipedia.page(page_title)
+
+ 
+
+                # Extract information from the page
+
+                title = page.title
+
+                summary = page.summary
+
+                content = page.content
+
+                images = page.images
+
+                url = page.url
+
+ 
+
+                # Print the extracted information
+
+ 
+
+                print(Fore.GREEN,{summary})
+
+ 
+
+                engine = pyttsx3.init()
+
+                rate = engine.getProperty('rate')
+
+                engine.setProperty('rate', rate == 150) # Decrease the rate by 50
+
+                engine.say({summary})
+
+                engine.runAndWait()
+
+                wake()
+
+            else:
+
+                completion = openai.ChatCompletion.create(
+
+                model="gpt-3.5-turbo-0613",
+
+                user="org-zLj47AMlnQ4VeS9UGA0tu8Eu",
+
+                messages=[
+
+                    {"role": "system", "content": "You are a helpful assistant named Echo. Answer the given question, and don't forget to refer to the user as 'Sir'."},
+
+                    {"role": "user", "content": question}
+
+                ]
+
+            )  
+
+                print(Fore.GREEN,completion.choices[0].message.content + "\n")
+
+                engine = pyttsx3.init()
+
+                rate = engine.getProperty('rate')
+
+                engine.setProperty('rate', rate == 150) # Decrease the rate by 50
+
+                engine.say(completion.choices[0].message.content)
+
+                engine.runAndWait()
+
+ 
+
+            wake()
+
+           
+
+ 
+
+    x = 1
+
+ 
+
+    while True:
+
+        import speech_recognition as sr
+
+        import pyaudio
+
+        import colorama
+
+        from colorama import Fore
+
+        import pyttsx3
+
+ 
+
+        # create an instance of the Recognizer class
+
+        r = sr.Recognizer()
+
+ 
+
+        # use the microphone as the source for audio input
+
+        with sr.Microphone() as source:
+
+            # record a short phrase
+
+            print(Fore.BLUE,"Listening...")
+
+            audio = r.listen(source)
+
+            r.adjust_for_ambient_noise
+
+ 
+
+        # recognize speech using Google Speech Recognition
+
+        try:
+
+            print(Fore.WHITE, "Please be patient while we process that data (this could take up to a minute).")
+
+            run_ai()
+
+            wake()
+
+            #print("Google Speech Recognition thinks you said " + r.recognize_google(audio))
+
+        except OSError:
+
+            engine = pyttsx3.init()
+
+            rate = engine.getProperty('rate')
+
+            engine.setProperty('rate', rate == 150) # Decrease the rate by 50
+
+            engine.say("System Error")
+
+            engine.runAndWait()
+
+ 
+
+        except sr.UnknownValueError:
+
+            print("Google Speech Recognition could not understand audio")
+
+        except sr.RequestError as e:
+
+            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+
+ 
+
+import speech_recognition as sr
+
+import os
+
+import pyaudio
+
+import winsound
+
+import pyttsx3
+
+ 
+
+# obtain audio from the microphone
+
+def wake():
+
+    while True:
+
+        import os
+
+        import colorama
+
+        from colorama import Fore
+
+        r1 = sr.Recognizer()
+
+        r1.adjust_for_ambient_noise
+
+        with sr.Microphone() as source1:
+
+            print(Fore.WHITE,"Ready")
+
+            audio1 = r1.listen(source1)
+
+            summon = r1.recognize_google(audio1)
+
+            if "echo" in summon.lower():
+
+                engine1 = pyttsx3.init()
+
+                engine1.say("Sir")
+
+                engine1.runAndWait()
+
+               # engine.say("Sir")
+
+                run_program()
+
+                #print("I have been summoned")
+
+            else:
+
+                #print("I was not summoned")
+
+                wake()
+
+ 
+
+wake()
