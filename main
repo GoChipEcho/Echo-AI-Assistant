@@ -188,7 +188,7 @@ def run_program():
 
                 messages=[
 
-                    {"role": "system", "content": "<PERSONALITY HERE>"},
+                    {"role": "system", "content": " <PUT EVERYTHING YOU WANT ECHO TO LEARN AND KNOW HERE> "},
 
                     {"role": "user", "content": question}
 
