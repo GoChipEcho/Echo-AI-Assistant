@@ -48,7 +48,7 @@ def run_program():
 
  
 
-        openai.api_key = "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"
+        openai.api_key = "<OPENAI_KEY_HERE>"
 
         current_time = datetime.datetime.now().strftime("%H %M")
 
