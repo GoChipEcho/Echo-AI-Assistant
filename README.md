@@ -1,4 +1,4 @@
-Meet ECHO, your new digital assitant. Continue reading to learn how to set it up, or click [HERE](https://scratch.mit.edu/projects/887050449/) for the interactive instructions.
+Meet ECHO, your new digital assitant. Continue reading to learn how to set it up. Please remember this project is still under development.
 
 1. Create a new python file
 2. Open the terminal and paste each of the followining into it one at a time
