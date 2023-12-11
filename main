@@ -182,7 +182,7 @@ def run_program():
 
                 completion = openai.ChatCompletion.create(
 
-                model="gpt-3.5-turbo-0613",
+                model="gpt-4-turbo",
 
                 user="org-zLj47AMlnQ4VeS9UGA0tu8Eu",
 
